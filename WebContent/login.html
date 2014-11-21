@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>在线教育</title>
+<script>
+	function actLogin()
+	{
+		var username = document.getElementById("username");
+		var pass = document.getElementById("password");
+		
+		document.loginForm.action="LoginToMenu"; 
+		document.loginForm.submit();
+
+		return true;
+	}
+	function actRegister()
+	{
+		document.loginForm.action="LoginToRegister"; 
+		document.loginForm.submit();
+	}
+</script>
+</head>
+<body>
+<form name = "loginForm" action = "" method = "post">
+		<table>
+			<tr>
+			<td><label for "txtname">帐号：</label></td>
+			<td><input type = "text" id = "username" name = "username"/></td>
+			</tr>
+			
+			<tr>
+			<td><label for "txtpwd">密码：</label></td>
+			<td><input type = "password" id = "pass" name = "pass"/></td>
+			</tr>
+			
+			<tr>
+			<td> <input type="button" value = "登录"  onClick = "actLogin();"/></td> 
+			<td colspan=2><input type="reset" />
+			<td colspan=2> <input type="button" value = "注册" onClick =  "actRegister();" /></td>			
+			</td>
+			</tr>
+			
+		</table>
+		</form>
+
+</body>
+</html>
