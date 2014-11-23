@@ -17,7 +17,7 @@ import dao.NoteDAO;
 /**
  * 
  * @author CYwlDXS
- * note的实现方法
+ * note的 	添加	删除	读取	搜索	输出	存储 实现方法
  */
 public class NoteDAOImpl implements NoteDAO{
 
@@ -39,9 +39,25 @@ public class NoteDAOImpl implements NoteDAO{
 		}
 	}
 	
-	public void addNote(Note note) {
-		// TODO Auto-generated method stub
+	public boolean addNote(Note note) {
 		
+		try {
+			Statement stmt = conn.createStatement();
+			String sql = "insert into NOTE(NOTENO,NOTETITLE,FFLOORCT,NOTEWRITER,NOTEADDR,NOTETIME) values('"
+					+ note.getTieziNo() + "','" + note.getTieziTitle() + "','"+note.getTieziFirstContext()+"','"+note.getTieziWriter()+"','"+note.getTieziAddr()+"','"+note.getTieziTime()+"')";
+			ResultSet rs = stmt.executeQuery(sql);
+
+			if (!rs.next()) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	public void searchNote(String title) {
@@ -93,9 +109,6 @@ public class NoteDAOImpl implements NoteDAO{
 			Statement stmt = conn.createStatement();
 			String sql = "select * from NOTE where NOTENO = '"+no+"'";
 			ResultSet rs = stmt.executeQuery(sql);
-
-			//ResultSetMetaData md = rs.getMetaData(); // 得到结果集(rs)的结构信息，比如字段数、字段名等
-			//int columnCount = md.getColumnCount(); // 返回此 ResultSet 对象中的列数	
 			if (rs.next()) {
 				note.setTieziNo((String) rs.getObject(1));// .put(md.getColumnName(i),															// rs.getObject(i));
 				note.setTieziTitle((String) rs.getObject(2));
@@ -108,6 +121,40 @@ public class NoteDAOImpl implements NoteDAO{
 		catch (SQLException e) {
 				e.printStackTrace();
 		}
+		return note;
+	}
+
+
+
+	public String rtMaxNoteNo() {
+		String max = null;
+		try {
+			Statement stmt = conn.createStatement();
+			String sql = "select max(noteno) from note ";
+			ResultSet rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				max = (String) rs.getObject(1);
+				int tempMax = Integer.valueOf(max)+1;
+				max = Integer.toString(tempMax);
+			}
+		}
+		catch (SQLException e) {
+				e.printStackTrace();
+		}
+		return max;
+	}
+
+	public Note saveNote(String noteno, String notetitle, String ffloorct,
+			String notewriter,String addr, String notetime) {
+			
+			Note note = new Note();
+			note.setTieziNo(noteno);
+			note.setTieziTitle(notetitle);
+			note.setTieziFirstContext(ffloorct);
+			note.setTieziWriter(notewriter);
+			note.setTieziAddr(addr);
+			note.setTieziTime(notetime);
+			
 		return note;
 	}
 

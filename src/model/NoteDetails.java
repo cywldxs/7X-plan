@@ -76,7 +76,7 @@ public class NoteDetails implements Comparable<NoteDetails>{
 		{
 			return 1;
 		}
-		else if(this.tieziTime.compareTo(o.tieziTime) <0)
+		else if(this.tieziTime.compareTo(o.tieziTime) ==0)
 		{
 			return 0;
 		}

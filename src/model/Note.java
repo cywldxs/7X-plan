@@ -97,11 +97,11 @@ public class Note implements Comparable<Note>{
 	}
 
 	public int compareTo(Note note) {
-		if(this.tieziTime.compareTo(note.tieziTime) >0)
+		if(this.tieziTime.compareTo(note.tieziTime) <0)
 		{
 			return 1;
 		}
-		else if(this.tieziTime.compareTo(note.tieziTime) <0)
+		else if(this.tieziTime.compareTo(note.tieziTime) ==0)
 		{
 			return 0;
 		}

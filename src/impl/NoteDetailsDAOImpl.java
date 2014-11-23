@@ -34,8 +34,24 @@ public class NoteDetailsDAOImpl implements NoteDetailsDAO{
 		}
 	}
 	
-	public void addNoteDetail(NoteDetails notedetails) {
-		// TODO Auto-generated method stub
+	public boolean addNoteDetail(NoteDetails notedetails) {
+		try {
+			Statement stmt = conn.createStatement();
+			String sql = "insert into NOTEDETAILS(NOTENO,FLOOR,NOTECONTEXT,NOTEWRITER,NOTETIME) values('"
+					+ notedetails.getTieziNo() + "','" + notedetails.getTieziFloor() + "','"+notedetails.getTieziContexts()+"','"+notedetails.getTieziWriter()+"','"+notedetails.getTieziTime()+"')";
+			ResultSet rs = stmt.executeQuery(sql);
+
+			if (!rs.next()) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 		
 	}
 
@@ -51,8 +67,6 @@ public class NoteDetailsDAOImpl implements NoteDetailsDAO{
 			String sql = "select * from NOTEDETAILS where NOTENO = '"+no+"'";
 			ResultSet rs = stmt.executeQuery(sql);
 
-			ResultSetMetaData md = rs.getMetaData(); // 得到结果集(rs)的结构信息，比如字段数、字段名等
-			int columnCount = md.getColumnCount(); // 返回此 ResultSet 对象中的列数
 
 			NoteDetails noteDetails = new NoteDetails();
 			while (rs.next()) {
@@ -75,6 +89,41 @@ public class NoteDetailsDAOImpl implements NoteDetailsDAO{
 		}
 		
 		return new TreeSet<NoteDetails>(this.ls);
+	}
+
+	public NoteDetails saveNoteDetails(String noteno, String floor,
+			String notecontext, String notewriter, String notetime) {
+		NoteDetails notedetails = new NoteDetails();
+		
+		notedetails.setTieziNo(noteno);
+		notedetails.setTieziFloor(floor);
+		notedetails.setTieziContexts(notecontext);
+		notedetails.setTieziWriter(notewriter);
+		notedetails.setTieziTime(notetime);
+		
+		return notedetails;
+	}
+
+	public String rtMaxFloor(String noteno) {
+		String max = null;
+		try {
+			Statement stmt = conn.createStatement();
+			String sql = "select max(floor) from notedetails where noteno = '"+noteno+"'";
+			ResultSet rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				max = (String) rs.getObject(1);
+				if(max!=null)
+				{
+				int tempMax = Integer.valueOf(max)+1;
+				max = Integer.toString(tempMax);
+				}
+				else{max = "2";}
+			}
+		}
+		catch (SQLException e) {
+				e.printStackTrace();
+		}
+		return max;
 	}
 
 	

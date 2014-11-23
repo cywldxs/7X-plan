@@ -41,6 +41,8 @@ public class DBToWeb extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String userno = request.getParameter("userno");
+		
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter(); 
 		
@@ -50,18 +52,19 @@ public class DBToWeb extends HttpServlet {
 
 		for (Note note : noteDao.listSortedNote())
 		{
-			out.println("<div><a href=\"http://localhost:8080/X-Plan/MasterToDetails?subject=check&param1="+note.getTieziNo()+"\"> "+note.getTieziTitle()+" BY "+note.getTieziWriter()+" Time: "+note.getTieziTime()+" </a></div>");
-		}
-		out.println("<form action=\"SaveNote\" method=\"post\"> ");
+			out.println("<div><a href=\"http://172.17.201.21:8080/X-Plan/MasterToDetails?noteno="+note.getTieziNo()+"&userno= "+userno+"\"> "+note.getTieziTitle()+" BY "+note.getTieziWriter()+" Time: "+note.getTieziTime()+" </a></div>");
+		}		
+		out.println("<form name = \"notecomit\" action=\"SaveNote?subject=check&userno="+userno+"\" method=\"post\"> ");
 		out.println("<div>------------------------------------------------------------------------------------------------------</div>");
 		out.println("<div>主题：</div>");
 		out.println("<input type=\"input\" name=\"title\" value=\"请输入主题\" size=\"30\" maxlength=\"30\" ></input> ");
 		out.println("<div>------------------------------------------------------------------------------------------------------</div>");
 		out.println("<div>主要内容：</div>");
-		out.println("<textarea name=\"stumemo\" rows=\"20\" cols=\"200\">主要内容</textarea>");
+		out.println("<textarea name=\"contexts\" rows=\"20\" cols=\"200\">主要内容</textarea>");
 		out.println("<div>------------------------------------------------------------------------------------------------------</div>");
+		out.println("<div>发帖人："+userno+"</div>");
 		out.println("<div>  ");
-		out.println(" <input type=\"submit\" value=\"发帖\"/>  <!--表单数据提交按钮,点击将把其所在的form的数据提交到action位置-->       ");
+		out.println(" <input type=\"submit\" value=\"发帖\" />  <!--表单数据提交按钮,点击将把其所在的form的数据提交到action位置-->       ");
 		out.println("<input type=\"reset\" value=\"清空\"/> ");
 		out.println(" </div>");
 		out.println("</form> ");

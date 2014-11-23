@@ -43,7 +43,7 @@ IOException {
 
 IOException {
 		
-		String no = request.getParameter("username");
+		String userno = request.getParameter("username");
 		String pwd = request.getParameter("pass");
 		
 		LoginDAO loginer = new LoginDAOImpl();
@@ -53,16 +53,15 @@ IOException {
 		PrintWriter out = response.getWriter();
 		
 		try {
-			if(loginer.judgeManager(no, pwd)==true)
+			if(loginer.judgeManager(userno, pwd)==true)
 			{
-			//out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://tieba.baidu.com/f?ie=utf-8&kw=%E9%AB%98%E4%B8%AD&fr=search\"> </head>");
-				out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://localhost:8080/X-Plan/DBToWeb\"> </head>");
+				out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/DBToWeb?&userno="+userno+"\"> </head>");
 				out.println("<body onload=\"javascript:window.alert('登录成功！')\"></body>");
 			}
 			else
 			{
 				out.println("<html>");
-				out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://localhost:8080/X-Plan/ \"> </head>");
+				out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/ \"> </head>");
 				out.println("<body onload=\"javascript:window.alert('用户名或密码错误')\"></body>");
 				out.println("</html>");
 			}

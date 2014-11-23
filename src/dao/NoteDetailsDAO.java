@@ -18,7 +18,7 @@ public interface NoteDetailsDAO {
 	/*
 	 * 添加
 	 */
-	void addNoteDetail(NoteDetails notedetails);
+	boolean addNoteDetail(NoteDetails notedetails);
 	
 	/*
 	 * 删除
@@ -30,5 +30,14 @@ public interface NoteDetailsDAO {
 	 */
 	TreeSet<NoteDetails> listSortedNtDtils(String no);
 	
+	/*
+	 * 存储
+	 */
+	NoteDetails saveNoteDetails(String noteno,String floor,String notecontext,String notewriter,String notetime);
+	
+	/*
+	 * 返回楼层最大值+1
+	 */
+	String  rtMaxFloor(String noteno);
 
 }

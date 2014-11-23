@@ -66,4 +66,14 @@
     <servlet-name>SaveNote</servlet-name>
     <url-pattern>/SaveNote</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SaveNoteDetails</display-name>
+    <servlet-name>SaveNoteDetails</servlet-name>
+    <servlet-class>serverlet.SaveNoteDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveNoteDetails</servlet-name>
+    <url-pattern>/SaveNoteDetails</url-pattern>
+  </servlet-mapping>
 </web-app>

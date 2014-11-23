@@ -59,7 +59,7 @@ public class Register extends HttpServlet {
 			//帐号已被使用
 			
 			out.println("<html>");
-			out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://localhost:8080/X-Plan/Register.html\"> </head>");
+			out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/Register.html\"> </head>");
 			out.println("<body onload=\"javascript:window.alert('帐号已被使用')\"></body>");
 			out.println("</html>");
 		}

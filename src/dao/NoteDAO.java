@@ -12,12 +12,13 @@ import model.Note;
  * 查
  * 输出
  * 删除
+ * 存储
  */
 public interface NoteDAO {
 	/*
 	 * 添加
 	 */
-	void addNote(Note note);
+	boolean addNote(Note note);
 	
 	/*
 	 * 查找
@@ -38,4 +39,14 @@ public interface NoteDAO {
 	 * 读取
 	 */
 	Note loadNote(String no);
+	
+	/*
+	 * 存储
+	 */
+	Note saveNote(String noteno,String notetitle,String ffloorct,String notewriter,String addr,String notetime);
+	
+	/*
+	 * 返回最大noteno
+	 */
+	String rtMaxNoteNo();
 }

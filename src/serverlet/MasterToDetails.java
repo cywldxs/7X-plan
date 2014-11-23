@@ -43,10 +43,11 @@ public class MasterToDetails extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String no = request.getParameter("param1");
+		String noteno = request.getParameter("noteno");
+		String userno = request.getParameter("userno");
 		
 		NoteDAO noteDAO = new NoteDAOImpl();
-		Note note = noteDAO.loadNote(no);
+		Note note = noteDAO.loadNote(noteno);
 		
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter(); 
@@ -58,12 +59,24 @@ public class MasterToDetails extends HttpServlet {
 		out.println("<div>1 "+note.getTieziFirstContext()+" BY "+note.getTieziWriter()+" Time: "+note.getTieziTime()+"</div>");
 		out.println("<div>------------------------------------------------------------------------------------------------------</div>");
 		
-		for (NoteDetails noteDetails : noteDetailsDAO.listSortedNtDtils(no))
+		for (NoteDetails noteDetails : noteDetailsDAO.listSortedNtDtils(noteno))
 		{
 			out.println("<div>------------------------------------------------------------------------------------------------------</div>");
 			out.println("<div>"+noteDetails.getTieziFloor()+" "+noteDetails.getTieziContexts()+" BY "+noteDetails.getTieziWriter()+" Time: "+noteDetails.getTieziTime()+" </div>");
 			out.println("<div>------------------------------------------------------------------------------------------------------</div>");
 		}
+		
+		out.println("<form name = \"notedetailscomit\" action=\"SaveNoteDetails?noteno="+noteno+"&writer="+userno+"\" method=\"post\"> ");
+		out.println("<div>------------------------------------------------------------------------------------------------------</div>");
+		out.println("<div>内容：</div>");
+		out.println("<textarea name=\"contexts\" rows=\"5\" cols=\"20\">请输入</textarea>");
+		out.println("<div>------------------------------------------------------------------------------------------------------</div>");
+		out.println("<div>发帖人："+userno+"</div>");
+		out.println("<div>  ");
+		out.println(" <input type=\"submit\" value=\"发帖\" />");
+		out.println("<input type=\"reset\" value=\"清空\"/> ");
+		out.println(" </div>");
+		out.println("</form> ");
 	}
 
 }
