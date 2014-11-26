@@ -10,35 +10,24 @@ public class Login {
 	/*
 	 * µÇÂ¼ÕÊºÅ
 	 */
-	private String loginNo;
+	private String no;
 	/*
 	 * ÃÜÂë
 	 */
-	private String loginPwd;
-	/*
-	 * È¨ÏÞ
-	 */
-	private String loginPermit;
+	private String pwd;
+
 	
-	
-	public String getLoginNo() {
-		return loginNo;
+	public String getNo() {
+		return no;
 	}
-	public void setLoginNo(String loginNo) {
-		this.loginNo = loginNo;
+	public void setNo(String no) {
+		this.no = no;
 	}
-	public String getLoginPwd() {
-		return loginPwd;
+	public String getPwd() {
+		return pwd;
 	}
-	public void setLoginPwd(String loginPwd) {
-		this.loginPwd = loginPwd;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
-	public String getLoginPermit() {
-		return loginPermit;
-	}
-	public void setLoginPermit(String loginPermit) {
-		this.loginPermit = loginPermit;
-	}
-	
-	
+
 }

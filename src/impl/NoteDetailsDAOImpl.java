@@ -29,7 +29,6 @@ public class NoteDetailsDAOImpl implements NoteDetailsDAO{
 		try {
 			conn = jdbc.jdbc();
 		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 	}
@@ -37,8 +36,8 @@ public class NoteDetailsDAOImpl implements NoteDetailsDAO{
 	public boolean addNoteDetail(NoteDetails notedetails) {
 		try {
 			Statement stmt = conn.createStatement();
-			String sql = "insert into NOTEDETAILS(NOTENO,FLOOR,NOTECONTEXT,NOTEWRITER,NOTETIME) values('"
-					+ notedetails.getTieziNo() + "','" + notedetails.getTieziFloor() + "','"+notedetails.getTieziContexts()+"','"+notedetails.getTieziWriter()+"','"+notedetails.getTieziTime()+"')";
+			String sql = "insert into NOTEDETAILS(NOTENO,FLOOR,CONTEXT,WRITER,TIME) values('"
+					+ notedetails.getNoteno() + "','" + notedetails.getFloor() + "','"+notedetails.getContext()+"','"+notedetails.getWriter()+"','"+notedetails.getTime()+"')";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			if (!rs.next()) {
@@ -55,9 +54,22 @@ public class NoteDetailsDAOImpl implements NoteDetailsDAO{
 		
 	}
 
-	public void deleteNoteDetail(int floor) {
-		// TODO Auto-generated method stub
+	public boolean deleteNoteDetail(String noteno ,String floor) {
 		
+		try {
+			Statement stmt = conn.createStatement();
+			String sql = "delete from NOTEDETAILS  where NOTENO = '"+noteno+"' and FLOOR = '"+floor+"'";
+			if (stmt.executeUpdate(sql) == 1) {
+				return true;			
+			} else {			
+				return false;
+			}
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	public TreeSet<NoteDetails> listSortedNtDtils(String no) {
@@ -72,12 +84,11 @@ public class NoteDetailsDAOImpl implements NoteDetailsDAO{
 			while (rs.next()) {
 				noteDetails = new NoteDetails();
 
-				noteDetails.setTieziNo((String) rs.getObject(1));// .put(md.getColumnName(i),
-															// rs.getObject(i));
-				noteDetails.setTieziFloor((String) rs.getObject(2));
-				noteDetails.setTieziContexts((String) rs.getObject(3));
-				noteDetails.setTieziWriter((String) rs.getObject(4));
-				noteDetails.setTieziTime((String) rs.getObject(5));
+				noteDetails.setNoteno((String) rs.getObject(1));
+				noteDetails.setFloor((String) rs.getObject(2));
+				noteDetails.setContext((String) rs.getObject(3));
+				noteDetails.setWriter((String) rs.getObject(4));
+				noteDetails.setTime((String) rs.getObject(5));
 				
 				ls.add(noteDetails);
 			}
@@ -92,14 +103,14 @@ public class NoteDetailsDAOImpl implements NoteDetailsDAO{
 	}
 
 	public NoteDetails saveNoteDetails(String noteno, String floor,
-			String notecontext, String notewriter, String notetime) {
+			String context, String writer, String time) {
 		NoteDetails notedetails = new NoteDetails();
 		
-		notedetails.setTieziNo(noteno);
-		notedetails.setTieziFloor(floor);
-		notedetails.setTieziContexts(notecontext);
-		notedetails.setTieziWriter(notewriter);
-		notedetails.setTieziTime(notetime);
+		notedetails.setNoteno(noteno);
+		notedetails.setFloor(floor);
+		notedetails.setContext(context);
+		notedetails.setWriter(writer);
+		notedetails.setTime(time);
 		
 		return notedetails;
 	}

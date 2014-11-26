@@ -11,12 +11,12 @@ public interface LoginDAO {
 	/**
 	 * 验证
 	 * 
-	 * @param mid
+	 * @param no
 	 * @param pwd
 	 * @return
 	 * @throws ClassNotFoundException
 	 */
-	boolean judgeManager(String mid, String pwd) throws ClassNotFoundException;
+	boolean loginJudge(String no, String pwd) throws ClassNotFoundException;
 
 	/**
 	 * 添加
@@ -32,7 +32,7 @@ public interface LoginDAO {
 	 * @param loginvo
 	 * @return
 	 */
-	Boolean searchLogin(LoginVO loginvo);
+	Boolean searchLogin(String no);
 
 	/**
 	 * 存储
@@ -43,4 +43,11 @@ public interface LoginDAO {
 	 * @return
 	 */
 	LoginVO saveLoginVO(String no, String pwd, String permit);
+	
+	/**
+	 * 通过帐号查询帐号类型并返回类型
+	 * @param no
+	 * @return
+	 */
+	String rtLoginType(String no);
 }

@@ -18,13 +18,14 @@ public interface NormalUserDAO {
 	boolean addNormalUser(NormalUserVO normaluser);
 
 	/**
-	 * 修改
+	 * 个人修改
 	 * @param no
 	 * @param type
 	 * @param value
 	 * @return
 	 */
-	boolean alterNormalUser(String no, String type, String value);
+	boolean alterNormalUser(String id,String no, String name, String sex,
+			String birthday, String pwd, String mail,String image,String tele);
 
 	/**
 	 * 查询
@@ -46,4 +47,18 @@ public interface NormalUserDAO {
 	 * @return
 	 */
 	NormalUserVO saveNormalUserVO(String no, String pwd);
+	
+	/**
+	 * 返回普通用户的信息
+	 * @param no
+	 * @return
+	 */
+	NormalUserVO rtNUserInfo(String no);
+	
+	/**
+	 * 删除普通用户
+	 * @param no
+	 * @return
+	 */
+	boolean deleteNormalUser(String no);
 }

@@ -76,4 +76,24 @@
     <servlet-name>SaveNoteDetails</servlet-name>
     <url-pattern>/SaveNoteDetails</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginTypeCheck</display-name>
+    <servlet-name>LoginTypeCheck</servlet-name>
+    <servlet-class>serverlet.LoginTypeCheck</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginTypeCheck</servlet-name>
+    <url-pattern>/LoginTypeCheck</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlterNUserInfo</display-name>
+    <servlet-name>AlterNUserInfo</servlet-name>
+    <servlet-class>serverlet.AlterNUserInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlterNUserInfo</servlet-name>
+    <url-pattern>/AlterNUserInfo</url-pattern>
+  </servlet-mapping>
 </web-app>

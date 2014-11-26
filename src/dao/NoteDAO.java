@@ -33,7 +33,7 @@ public interface NoteDAO {
 	/*
 	 * 删除
 	 */
-	void deleteNote(String tieziNo);
+	boolean deleteNote(String noteno);
 	
 	/*
 	 * 读取
@@ -43,10 +43,17 @@ public interface NoteDAO {
 	/*
 	 * 存储
 	 */
-	Note saveNote(String noteno,String notetitle,String ffloorct,String notewriter,String addr,String notetime);
+	Note saveNote(String noteno,String type,String title,String fcontext,String hotnum,String writer,String time);
 	
 	/*
 	 * 返回最大noteno
 	 */
 	String rtMaxNoteNo();
+	
+	/*
+	 * 返回当前最大点赞数加一
+	 */
+	String rtMaxHotnum();
+	
+	
 }

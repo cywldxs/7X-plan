@@ -23,7 +23,7 @@ public interface NoteDetailsDAO {
 	/*
 	 * 删除
 	 */
-	void deleteNoteDetail(int floor);
+	boolean deleteNoteDetail(String noteno,String floor);
 	
 	/*
 	 * 输出
@@ -33,7 +33,7 @@ public interface NoteDetailsDAO {
 	/*
 	 * 存储
 	 */
-	NoteDetails saveNoteDetails(String noteno,String floor,String notecontext,String notewriter,String notetime);
+	NoteDetails saveNoteDetails(String noteno,String floor,String context,String writer,String time);
 	
 	/*
 	 * 返回楼层最大值+1

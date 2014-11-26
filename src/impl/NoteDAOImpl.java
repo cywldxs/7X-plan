@@ -13,23 +13,20 @@ import jdbc.jdbc;
 import model.Note;
 import dao.NoteDAO;
 
-
 /**
  * 
- * @author CYwlDXS
- * note的 	添加	删除	读取	搜索	输出	存储 实现方法
+ * @author CYwlDXS note的 添加 删除 读取 搜索 输出 存储 实现方法
  */
-public class NoteDAOImpl implements NoteDAO{
+public class NoteDAOImpl implements NoteDAO {
 
 	public List<Note> ls = new ArrayList();
-	
+
 	private Connection conn;
-	
+
 	/*
 	 * 登录连接数据库
 	 */
-	public NoteDAOImpl()
-	{
+	public NoteDAOImpl() {
 		conn = null;
 		try {
 			conn = jdbc.jdbc();
@@ -38,13 +35,25 @@ public class NoteDAOImpl implements NoteDAO{
 			e1.printStackTrace();
 		}
 	}
-	
+
 	public boolean addNote(Note note) {
-		
+
 		try {
 			Statement stmt = conn.createStatement();
-			String sql = "insert into NOTE(NOTENO,NOTETITLE,FFLOORCT,NOTEWRITER,NOTEADDR,NOTETIME) values('"
-					+ note.getTieziNo() + "','" + note.getTieziTitle() + "','"+note.getTieziFirstContext()+"','"+note.getTieziWriter()+"','"+note.getTieziAddr()+"','"+note.getTieziTime()+"')";
+			String sql = "insert into NOTE(NOTENO,TYPE,TITLE,FCONTEXT,HOTNUM,WRITER,TIME) values('"
+					+ note.getNoteno()
+					+ "','"
+					+ note.getType()
+					+ "','"
+					+ note.getTitle()
+					+ "','"
+					+ note.getFcontext()
+					+ "','"
+					+ note.getHotnum()
+					+ "','"
+					+ note.getWriter()
+					+ "','"
+					+ note.getTime() + "')";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			if (!rs.next()) {
@@ -62,7 +71,7 @@ public class NoteDAOImpl implements NoteDAO{
 
 	public void searchNote(String title) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public TreeSet<Note> listSortedNote() {
@@ -74,57 +83,74 @@ public class NoteDAOImpl implements NoteDAO{
 			ResultSetMetaData md = rs.getMetaData(); // 得到结果集(rs)的结构信息，比如字段数、字段名等
 			int columnCount = md.getColumnCount(); // 返回此 ResultSet 对象中的列数
 
-			Note note = new Note();
+			
 			while (rs.next()) {
-				note = new Note();
-
-				note.setTieziNo((String) rs.getObject(1));// .put(md.getColumnName(i),
-															// rs.getObject(i));
-				note.setTieziTitle((String) rs.getObject(2));
-				note.setTieziFirstContext((String) rs.getObject(3));
-				note.setTieziWriter((String) rs.getObject(4));
-				note.setTieziAddr((String) rs.getObject(5));
-				note.setTieziTime((String) rs.getObject(6));
 				
+				Note note = new Note();
+				note.setNoteno((String) rs.getObject(1));// .put(md.getColumnName(i),
+				note.setType((String) rs.getObject(6));											// rs.getObject(i));
+				note.setTitle((String) rs.getObject(2));
+				note.setFcontext((String) rs.getObject(3));
+				note.setHotnum((String) rs.getObject(7));
+				note.setWriter((String) rs.getObject(4));
+				note.setTime((String) rs.getObject(5));
+
 				ls.add(note);
 			}
 
 		}
 
 		catch (SQLException e) {
-				e.printStackTrace();
+			e.printStackTrace();
 		}
-		
+
 		return new TreeSet<Note>(this.ls);
 	}
 
-	public void deleteNote(String tieziNo) {
-		// TODO Auto-generated method stub
-		
-	}
+	public boolean deleteNote(String noteno) {
 
-	public Note loadNote(String no) {		
-		Note note = new Note();		
 		try {
 			Statement stmt = conn.createStatement();
-			String sql = "select * from NOTE where NOTENO = '"+no+"'";
-			ResultSet rs = stmt.executeQuery(sql);
-			if (rs.next()) {
-				note.setTieziNo((String) rs.getObject(1));// .put(md.getColumnName(i),															// rs.getObject(i));
-				note.setTieziTitle((String) rs.getObject(2));
-				note.setTieziFirstContext((String) rs.getObject(3));
-				note.setTieziWriter((String) rs.getObject(4));
-				note.setTieziAddr((String) rs.getObject(5));
-				note.setTieziTime((String) rs.getObject(6));
+			String sql = "delete from NOTE  where NOTENO = '" + noteno + "'";
+			if (stmt.executeUpdate(sql) == 1) {
+				sql = "delete from NOTEDETAILS where NOTENO = '" + noteno + "'";
+				if (stmt.executeUpdate(sql) >= 0) {
+					return true;
+				} else
+					return false;
+			} else {
+				return false;
 			}
 		}
+
 		catch (SQLException e) {
-				e.printStackTrace();
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+
+	public Note loadNote(String noteno) {
+		Note note = new Note();
+		try {
+			Statement stmt = conn.createStatement();
+			String sql = "select * from NOTE where NOTENO = '" + noteno + "'";
+			ResultSet rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				note.setNoteno((String) rs.getObject(1));// .put(md.getColumnName(i),
+				note.setType((String) rs.getObject(6));											// rs.getObject(i));
+				note.setTitle((String) rs.getObject(2));
+				note.setFcontext((String) rs.getObject(3));
+				note.setHotnum((String) rs.getObject(7));
+				note.setWriter((String) rs.getObject(4));
+				note.setTime((String) rs.getObject(5));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return note;
 	}
-
-
 
 	public String rtMaxNoteNo() {
 		String max = null;
@@ -134,28 +160,52 @@ public class NoteDAOImpl implements NoteDAO{
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				max = (String) rs.getObject(1);
-				int tempMax = Integer.valueOf(max)+1;
+				if(!max.equals(""))
+				{	
+				int tempMax = Integer.valueOf(max) + 1;
 				max = Integer.toString(tempMax);
+				}
+				else
+					max = "1";
 			}
-		}
-		catch (SQLException e) {
-				e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return max;
 	}
 
-	public Note saveNote(String noteno, String notetitle, String ffloorct,
-			String notewriter,String addr, String notetime) {
-			
-			Note note = new Note();
-			note.setTieziNo(noteno);
-			note.setTieziTitle(notetitle);
-			note.setTieziFirstContext(ffloorct);
-			note.setTieziWriter(notewriter);
-			note.setTieziAddr(addr);
-			note.setTieziTime(notetime);
-			
+	public Note saveNote(String noteno, String type, String title,
+			String fcontext, String hotnum, String writer, String time) {
+		
+		Note note = new Note();
+		note.setNoteno(noteno);
+		note.setType(type);										
+		note.setTitle(title);
+		note.setFcontext(fcontext);
+		note.setHotnum(hotnum);
+		note.setWriter(writer);
+		note.setTime(time);
+
 		return note;
 	}
+
+	public String rtMaxHotnum() {
+		String max = null;
+		try {
+			Statement stmt = conn.createStatement();
+			String sql = "select max(HOTNUM) from note ";
+			ResultSet rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				max = (String) rs.getObject(1);
+				int tempMax = Integer.valueOf(max) + 1;
+				max = Integer.toString(tempMax);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return max;
+	}
+
+
 
 }

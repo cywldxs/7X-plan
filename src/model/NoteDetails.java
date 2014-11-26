@@ -9,74 +9,96 @@ public class NoteDetails implements Comparable<NoteDetails>{
 	/*
 	 * 帖子编号
 	 */
-	private String tieziNo;
+	private String noteno;
 	
 	/*
 	 * 楼层
 	 */
-	private String tieziFloor;
+	private String floor;
 	
 	/*
 	 * 内容
 	 */
-	private String tieziContexts;
+	private String context;
 	
 	/*
 	 * 作者
 	 */
-	private String tieziWriter;
+	private String writer;
 	
 	/*
 	 * 时间
 	 */
-	private String tieziTime;
+	private String time;
 
-	public String getTieziNo() {
-		return tieziNo;
+
+
+	public String getNoteno() {
+		return noteno;
 	}
 
-	public void setTieziNo(String tieziNo) {
-		this.tieziNo = tieziNo;
+
+
+	public void setNoteno(String noteno) {
+		this.noteno = noteno;
 	}
 
-	public String getTieziFloor() {
-		return tieziFloor;
+
+
+	public String getFloor() {
+		return floor;
 	}
 
-	public void setTieziFloor(String string) {
-		this.tieziFloor = string;
+
+
+	public void setFloor(String floor) {
+		this.floor = floor;
 	}
 
-	public String getTieziContexts() {
-		return tieziContexts;
+
+
+	public String getContext() {
+		return context;
 	}
 
-	public void setTieziContexts(String tieziContexts) {
-		this.tieziContexts = tieziContexts;
+
+
+	public void setContext(String context) {
+		this.context = context;
 	}
 
-	public String getTieziWriter() {
-		return tieziWriter;
+
+
+	public String getWriter() {
+		return writer;
 	}
 
-	public void setTieziWriter(String tieziWriter) {
-		this.tieziWriter = tieziWriter;
+
+
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 
-	public String getTieziTime() {
-		return tieziTime;
+
+
+	public String getTime() {
+		return time;
 	}
 
-	public void setTieziTime(String tieziTime) {
-		this.tieziTime = tieziTime;
+
+
+	public void setTime(String time) {
+		this.time = time;
 	}
+
+
 
 	public int compareTo(NoteDetails o) {
-		if(this.tieziTime.compareTo(o.tieziTime) >0)
+		if(this.time.compareTo(o.time) >0)
 		{
 			return 1;
 		}
-		else if(this.tieziTime.compareTo(o.tieziTime) ==0)
+		else if(this.time.compareTo(o.time) ==0)
 		{
 			return 0;
 		}

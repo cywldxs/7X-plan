@@ -11,101 +11,115 @@ public class Note implements Comparable<Note>{
 	/*
 	 * 帖子编号
 	 */
-	private String tieziNo;
-	
+	private String noteno;
+	/*
+	 * 群组名
+	 */
+	private String type;
 	/*
 	 * 帖子标题
 	 */
-	private String tieziTitle;
+	private String title;
 	
 	/*
 	 * 1楼内容
 	 */
-	private String tieziFirstContext;
-	
+	private String fcontext;
+	/*
+	 * 点赞数
+	 */
+	private String hotnum;
 	/*
 	 * 作者帐号
 	 */
-	private String tieziWriter;
-	
-	/*
-	 * 链接
-	 */
-	private String tieziAddr;
-	
+	private String writer;
 	/*
 	 * 发帖日期
 	 */
-	private String tieziTime;
+	private String time;
 
-	public String getTieziNo() {
-		return tieziNo;
-	}
 
-	public void setTieziNo(String tieziNo) {
-		this.tieziNo = tieziNo;
-	}
-
-	public String getTieziTitle() {
-		return tieziTitle;
-	}
-
-	public void setTieziTitle(String tieziTitle) {
-		this.tieziTitle = tieziTitle;
-	}
-
-	public String getTieziFirstContext() {
-		return tieziFirstContext;
-	}
-
-	public void setTieziFirstContext(String tieziFirstContext) {
-		this.tieziFirstContext = tieziFirstContext;
-	}
-
-	public String getTieziWriter() {
-		return tieziWriter;
-	}
-
-	public void setTieziWriter(String tieziWriter) {
-		this.tieziWriter = tieziWriter;
-	}
-
-	public String getTieziAddr() {
-		return tieziAddr;
-	}
-
-	public void setTieziAddr(String tieziAddr) {
-		this.tieziAddr = tieziAddr;
-	}
-
-	public String getTieziTime() {
-		return tieziTime;
-	}
-
-	public void setTieziTime(String tieziTime) {
-		this.tieziTime = tieziTime;
-	}
 	
+
+	
+	public String getNoteno() {
+		return noteno;
+	}
+
+	public void setNoteno(String noteno) {
+		this.noteno = noteno;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getFcontext() {
+		return fcontext;
+	}
+
+	public void setFcontext(String fcontext) {
+		this.fcontext = fcontext;
+	}
+
+	public String getHotnum() {
+		return hotnum;
+	}
+
+	public void setHotnum(String hotnum) {
+		this.hotnum = hotnum;
+	}
+
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
 
 	
 	/**
 	 * 规则列出
 	 */
+	/*
 	public void formattedOut() {
 		System.out.printf("%10s   %10s   %10s  \n",
-				this.tieziTitle, this.tieziWriter, this.tieziTime);
-	}
+				this.title, this.writer, this.time);
+	}*/
 
-	public int compareTo(Note note) {
-		if(this.tieziTime.compareTo(note.tieziTime) <0)
+	public int compareTo(Note o) {
+		if(this.time.compareTo(o.time) <0)
 		{
 			return 1;
 		}
-		else if(this.tieziTime.compareTo(note.tieziTime) ==0)
+		else if(this.time.compareTo(o.time) ==0)
 		{
 			return 0;
 		}
 		else
 			return -1;
 	}
+
+
 }

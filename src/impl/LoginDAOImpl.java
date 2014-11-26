@@ -40,7 +40,7 @@ public class LoginDAOImpl implements LoginDAO {
 	 * @see dao.LoginDAO#judgeManager(java.lang.String, java.lang.String)
 	 * 登录时，验证用户名密码的方法
 	 */
-	public boolean judgeManager(String no, String pwd) {
+	public boolean loginJudge(String no, String pwd) {
 
 		try {
 			Statement stmt = conn.createStatement();
@@ -67,8 +67,8 @@ public class LoginDAOImpl implements LoginDAO {
 		try {
 			Statement stmt = conn.createStatement();
 			String sql = "insert into LOGIN(NO,PWD,PERMIT) values('"
-					+ loginvo.getLoginNo() + "','" + loginvo.getLoginPwd()
-					+ "','" + loginvo.getLoginPermit() + "')";
+					+ loginvo.getNo() + "','" + loginvo.getPwd()
+					+ "','" + loginvo.getPermit() + "')";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			if (!rs.next()) {
@@ -84,12 +84,12 @@ public class LoginDAOImpl implements LoginDAO {
 
 	}
 
-	public Boolean searchLogin(LoginVO loginvo) {
+	public Boolean searchLogin(String no) {
 
 		try {
 			Statement stmt = conn.createStatement();
 			String sql = "select * from LOGIN where NO = '"
-					+ loginvo.getLoginNo() + "'";
+					+ no + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			if (!rs.next()) {
@@ -106,10 +106,33 @@ public class LoginDAOImpl implements LoginDAO {
 
 	public LoginVO saveLoginVO(String no, String pwd, String permit) {
 		LoginVO loginvo = new LoginVO();
-		loginvo.setLoginNo(no);
-		loginvo.setLoginPwd(pwd);
-		loginvo.setLoginPermit(permit);
+		loginvo.setNo(no);
+		loginvo.setPwd(pwd);
+		loginvo.setPermit(permit);
 		return loginvo;
+	}
+
+
+
+	public String rtLoginType(String no) {
+		String type = null;
+		try {
+			Statement stmt = conn.createStatement();
+			String sql = "select PERMIT from LOGIN where NO = '"
+					+ no + "'";
+			ResultSet rs = stmt.executeQuery(sql);
+
+			if (rs.next()) {
+				type = (String) rs.getObject(1);
+			} else {
+				
+			}
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return type;
 	}
 
 }

@@ -51,13 +51,13 @@ public class SaveNote extends HttpServlet {
 
 		request.setCharacterEncoding("utf-8");
 		String title = request.getParameter("title");
-		String context = request.getParameter("contexts");
+		String fcontext = request.getParameter("contexts");
 		String writer = request.getParameter("userno");
 
 		Date now = new Date();
 		Calendar cal = Calendar.getInstance();
 		DateFormat t = DateFormat.getDateTimeInstance();
-		String notetime = t.format(now);
+		String time = t.format(now);
 
 		NoteDAO noteDAO = new NoteDAOImpl();
 		String noteno = noteDAO.rtMaxNoteNo();
@@ -68,8 +68,7 @@ public class SaveNote extends HttpServlet {
 		out.println("<div>" + noteno + "</div>");
 		out.println("<div>" + notetime + "</div>");*/
 
-		Note note = noteDAO.saveNote(noteno, title, context, writer, noteno,
-				notetime);
+		Note note = noteDAO.saveNote(noteno, "type", title, fcontext, "0", writer, time);
 
 		if (noteDAO.addNote(note)) {
 			out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/DBToWeb?subject=check&userno="

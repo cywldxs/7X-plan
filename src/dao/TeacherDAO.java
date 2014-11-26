@@ -14,15 +14,21 @@ import vo.TeacherVO;
  * 输出
  */
 public interface TeacherDAO {
-	/*
-	 * 添加
+	/**
+	 * 添加教师
+	 * @param teacher
+	 * @return
 	 */
-	void addTeacher(TeacherVO teacher);
+	boolean addTeacher(String no,String name, String sex, String birthday,String pwd, String email,String tele,String grade);
 	
-	/*
-	 * 修改
+	/**
+	 * 修改教师
+	 * @param no
+	 * @param type
+	 * @param value
+	 * @return
 	 */
-	void alterTeacher(String no,String type,String value);
+	boolean alterTeacher(String no,String name, String sex, String birthday,String pwd, String email,String tele,String grade);
 	
 	/*
 	 * 查询
@@ -33,4 +39,11 @@ public interface TeacherDAO {
 	 * 输出
 	 */
 	TreeSet<TeacherVO> listSortedTeacher();
+	
+	/**
+	 * 删除教师用户
+	 * @param no
+	 * @return
+	 */
+	boolean deleteTeacher(String no);
 }

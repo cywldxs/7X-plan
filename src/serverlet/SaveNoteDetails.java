@@ -62,12 +62,12 @@ public class SaveNoteDetails extends HttpServlet {
 		
 		if(noteDetailsDAO.addNoteDetail(notedetails))
 		{
-			out.println("<head><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/MasterToDetails?noteno="+notedetails.getTieziNo()+"&userno="+writer+"\"> </head>");
+			out.println("<head><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/MasterToDetails?noteno="+notedetails.getNoteno()+"&userno="+writer+"\"> </head>");
 			out.println("<body onload=\"javascript:window.alert('发帖成功！')\"></body>");
 		}
 		else
 		{
-			out.println("<head><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/MasterToDetails?noteno="+notedetails.getTieziNo()+"&userno="+writer+"\"> </head>");
+			out.println("<head><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/MasterToDetails?noteno="+notedetails.getNoteno()+"&userno="+writer+"\"> </head>");
 			out.println("<body onload=\"javascript:window.alert('发帖失败！')\"></body>");
 		}
 		

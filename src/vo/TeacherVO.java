@@ -6,4 +6,18 @@ package vo;
  */
 public class TeacherVO extends model.NormalUser{
 
+	/*
+	 * ½ÌÊÚÄê¼¶
+	 */
+	private String grade;
+
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	
+	
 }

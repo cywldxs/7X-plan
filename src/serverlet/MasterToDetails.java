@@ -54,15 +54,15 @@ public class MasterToDetails extends HttpServlet {
 		
 		NoteDetailsDAO noteDetailsDAO = new NoteDetailsDAOImpl();
 		out.println("<div>------------------------------------------------------------------------------------------------------</div>");
-		out.println("<div>"+note.getTieziNo()+" "+note.getTieziTitle()+" BY "+note.getTieziWriter()+" Time: "+note.getTieziTime()+" </div>");
+		out.println("<div>"+note.getNoteno()+" "+note.getTitle()+" BY "+note.getWriter()+" Time: "+note.getTime()+" </div>");
 		out.println("<div>------------------------------------------------------------------------------------------------------</div>");
-		out.println("<div>1 "+note.getTieziFirstContext()+" BY "+note.getTieziWriter()+" Time: "+note.getTieziTime()+"</div>");
+		out.println("<div>1 "+note.getFcontext()+" BY "+note.getWriter()+" Time: "+note.getTime()+"</div>");
 		out.println("<div>------------------------------------------------------------------------------------------------------</div>");
 		
 		for (NoteDetails noteDetails : noteDetailsDAO.listSortedNtDtils(noteno))
 		{
 			out.println("<div>------------------------------------------------------------------------------------------------------</div>");
-			out.println("<div>"+noteDetails.getTieziFloor()+" "+noteDetails.getTieziContexts()+" BY "+noteDetails.getTieziWriter()+" Time: "+noteDetails.getTieziTime()+" </div>");
+			out.println("<div>"+noteDetails.getFloor()+" "+noteDetails.getContext()+" BY "+noteDetails.getWriter()+" Time: "+noteDetails.getTime()+" </div>");
 			out.println("<div>------------------------------------------------------------------------------------------------------</div>");
 		}
 		

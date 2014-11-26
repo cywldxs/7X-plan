@@ -7,46 +7,26 @@ package vo;
 public class NormalUserVO extends model.NormalUser{
 
 	/*
-	 * 姓名
+	 * 学籍号
 	 */
-	private String Name;
-	/*
-	 * 性别
-	 */
-	private String sex;
-	/*
-	 * 年龄
-	 */
-	private String age;
-	/*
-	 * 生日
-	 */
-	private String birthday;
+	private String id;
 	
-	public String getName() {
-		return Name;
-	}
-	public void setName(String name) {
-		Name = name;
-	}
-	public String getSex() {
-		return sex;
-	}
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-	public String getAge() {
-		return age;
-	}
-	public void setAge(String age) {
-		this.age = age;
-	}
-	public String getBirthday() {
-		return birthday;
-	}
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
-	}
+	/*
+	 * 图象链接
+	 */
+	private String image;
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 	
 }

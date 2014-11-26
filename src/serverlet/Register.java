@@ -45,8 +45,8 @@ public class Register extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String no = request.getParameter("username");
-		String pwd = request.getParameter("pass");
+		String no = request.getParameter("no");
+		String pwd = request.getParameter("pwd");
 		
 		LoginDAO logindao = new LoginDAOImpl();
 		LoginVO loginvo = logindao.saveLoginVO(no, pwd, "normal");
@@ -54,7 +54,7 @@ public class Register extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter(); 
 		
-		if(logindao.searchLogin(loginvo))
+		if(logindao.searchLogin(loginvo.getNo()))
 		{
 			//帐号已被使用
 			
@@ -76,7 +76,7 @@ public class Register extends HttpServlet {
 				//注册成功 跳转登录
 
 				out.println("<html>");
-				out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://localhost:8080/X-Plan/ \"> </head>");
+				out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/ \"> </head>");
 				out.println("<body onload=\"javascript:window.alert('注册成功！')\"></body>");
 				out.println("</html>");
 			}

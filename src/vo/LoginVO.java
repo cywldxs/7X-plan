@@ -6,4 +6,15 @@ package vo;
  */
 public class LoginVO extends model.Login{
 
+	/*
+	 * х╗оч
+	 */
+	private String permit;
+	
+	public String getPermit() {
+		return permit;
+	}
+	public void setPermit(String permit) {
+		this.permit = permit;
+	}
 }
