@@ -189,11 +189,11 @@ public class NoteDAOImpl implements NoteDAO {
 		return note;
 	}
 
-	public String rtMaxHotnum() {
+	public String rtMaxHotnum(String noteno) {
 		String max = null;
 		try {
 			Statement stmt = conn.createStatement();
-			String sql = "select max(HOTNUM) from note ";
+			String sql = "select max(HOTNUM) from note where NO = '"+noteno+"'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				max = (String) rs.getObject(1);
@@ -204,6 +204,23 @@ public class NoteDAOImpl implements NoteDAO {
 			e.printStackTrace();
 		}
 		return max;
+	}
+
+	public boolean HotnumUp(String noteno, String num) {
+		try {
+			Statement stmt = conn.createStatement();
+			String sql = "update NOTE set HOTNUM = '"+num+"' where NO = '"+noteno+"'";
+			if (stmt.executeUpdate(sql) == 1) {
+					return true;
+			} else {
+				return false;
+			}
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 

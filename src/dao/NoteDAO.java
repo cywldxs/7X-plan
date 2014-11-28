@@ -53,7 +53,11 @@ public interface NoteDAO {
 	/*
 	 * 返回当前最大点赞数加一
 	 */
-	String rtMaxHotnum();
+	String rtMaxHotnum(String noteno);
+	/*
+	 * 点赞
+	 */
+	boolean HotnumUp(String noteno,String num);
 	
 	
 }
