@@ -15,27 +15,27 @@ import model.NoteDetails;
  */
 public interface NoteDetailsDAO {
 	
-	/*
+	/**
 	 * 添加
 	 */
 	boolean addNoteDetail(NoteDetails notedetails);
 	
-	/*
+	/**
 	 * 删除
 	 */
 	boolean deleteNoteDetail(String noteno,String floor);
 	
-	/*
+	/**
 	 * 输出
 	 */
 	TreeSet<NoteDetails> listSortedNtDtils(String no);
 	
-	/*
+	/**
 	 * 存储
 	 */
 	NoteDetails saveNoteDetails(String noteno,String floor,String context,String writer,String time);
 	
-	/*
+	/**
 	 * 返回楼层最大值+1
 	 */
 	String  rtMaxFloor(String noteno);
