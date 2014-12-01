@@ -47,6 +47,8 @@ public class DBToWeb extends HttpServlet {
 		
 		NoteDAO noteDao = new NoteDAOImpl();
 
+		out.println("<div><a href=\"http://172.17.201.21:8080/X-Plan/login.html\">×¢Ïú</a></div>");
+		
 		for (Note note : noteDao.listSortedNote())
 		{
 			NoteDAO noteDAO = new NoteDAOImpl();
