@@ -49,7 +49,9 @@ public class DBToWeb extends HttpServlet {
 
 		for (Note note : noteDao.listSortedNote())
 		{
-			out.println("<div><a href=\"http://172.17.201.21:8080/X-Plan/MasterToDetails?noteno="+note.getNoteno()+"&userno= "+userno+"\"> "+note.getTitle()+" BY "+note.getWriter()+" Time: "+note.getTime()+" </a></div>");
+			NoteDAO noteDAO = new NoteDAOImpl();
+			String hotnum = noteDAO.rtMaxHotnum(note.getNoteno());
+			out.println("<div><a href=\"http://172.17.201.21:8080/X-Plan/HotNumUp?noteno="+note.getNoteno()+"&userno="+userno+"&hotnum="+hotnum+"\">до:"+hotnum+"</a><a href=\"http://172.17.201.21:8080/X-Plan/MasterToDetails?noteno="+note.getNoteno()+"&userno="+userno+"\"> "+note.getTitle()+" BY "+note.getWriter()+" Time: "+note.getTime()+" </a></div>");
 		}		
 		out.println("<form name = \"notecomit\" action=\"SaveNote?subject=check&userno="+userno+"\" method=\"post\"> ");
 		out.println("<div>------------------------------------------------------------------------------------------------------</div>");

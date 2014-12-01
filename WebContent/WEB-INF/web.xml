@@ -96,4 +96,14 @@
     <servlet-name>AlterNUserInfo</servlet-name>
     <url-pattern>/AlterNUserInfo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HotNumUp</display-name>
+    <servlet-name>HotNumUp</servlet-name>
+    <servlet-class>serverlet.HotNumUp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HotNumUp</servlet-name>
+    <url-pattern>/HotNumUp</url-pattern>
+  </servlet-mapping>
 </web-app>

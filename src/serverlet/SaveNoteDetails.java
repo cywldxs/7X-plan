@@ -1,10 +1,12 @@
 package serverlet;
 
+import impl.NoteDAOImpl;
 import impl.NoteDetailsDAOImpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.NoteDetails;
+import dao.NoteDAO;
 import dao.NoteDetailsDAO;
 
 /**
@@ -54,13 +57,14 @@ public class SaveNoteDetails extends HttpServlet {
 		String floor = noteDetailsDAO.rtMaxFloor(noteno);
 		
 		Date now = new Date();
-		Calendar cal = Calendar.getInstance();
-		DateFormat t = DateFormat.getDateTimeInstance();
+		SimpleDateFormat t =   new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
 		String notetime = t.format(now);
 		
 		NoteDetails notedetails = noteDetailsDAO.saveNoteDetails(noteno, floor, context, writer, notetime);
 		
-		if(noteDetailsDAO.addNoteDetail(notedetails))
+		NoteDAO noteDAO = new NoteDAOImpl();
+		
+		if(noteDetailsDAO.addNoteDetail(notedetails)&&noteDAO.updateNoteTime(noteno, notetime))
 		{
 			out.println("<head><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/MasterToDetails?noteno="+notedetails.getNoteno()+"&userno="+writer+"\"> </head>");
 			out.println("<body onload=\"javascript:window.alert('·¢Ìû³É¹¦£¡')\"></body>");

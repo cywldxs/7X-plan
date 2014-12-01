@@ -5,6 +5,7 @@ import impl.NoteDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -55,8 +56,7 @@ public class SaveNote extends HttpServlet {
 		String writer = request.getParameter("userno");
 
 		Date now = new Date();
-		Calendar cal = Calendar.getInstance();
-		DateFormat t = DateFormat.getDateTimeInstance();
+		SimpleDateFormat t =   new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
 		String time = t.format(now);
 
 		NoteDAO noteDAO = new NoteDAOImpl();

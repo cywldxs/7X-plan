@@ -51,13 +51,17 @@ public interface NoteDAO {
 	String rtMaxNoteNo();
 	
 	/*
-	 * 返回当前最大点赞数加一
+	 * 返回当前最大点赞数
 	 */
 	String rtMaxHotnum(String noteno);
 	/*
 	 * 点赞
 	 */
-	boolean HotnumUp(String noteno,String num);
+	boolean HotnumUp(String noteno,String num,String userno);
+	/*
+	 * 更新主帖最后回复时间
+	 */
+	boolean updateNoteTime(String noteno,String time);
 	
 	
 }

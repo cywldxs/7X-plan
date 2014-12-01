@@ -160,7 +160,7 @@ public class NoteDAOImpl implements NoteDAO {
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				max = (String) rs.getObject(1);
-				if(!max.equals(""))
+				if(!(max==null))
 				{	
 				int tempMax = Integer.valueOf(max) + 1;
 				max = Integer.toString(tempMax);
@@ -193,11 +193,11 @@ public class NoteDAOImpl implements NoteDAO {
 		String max = null;
 		try {
 			Statement stmt = conn.createStatement();
-			String sql = "select max(HOTNUM) from note where NO = '"+noteno+"'";
+			String sql = "select HOTNUM from note where NOTENO = '"+noteno+"'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				max = (String) rs.getObject(1);
-				int tempMax = Integer.valueOf(max) + 1;
+				int tempMax = Integer.valueOf(max);
 				max = Integer.toString(tempMax);
 			}
 		} catch (SQLException e) {
@@ -206,10 +206,55 @@ public class NoteDAOImpl implements NoteDAO {
 		return max;
 	}
 
-	public boolean HotnumUp(String noteno, String num) {
+	public boolean HotnumUp(String noteno, String num,String userno) {
+		
+		try {
+			
+			int tempMax = Integer.valueOf(num)+1;
+			num = Integer.toString(tempMax);
+			
+			Statement stmt = conn.createStatement();
+			
+			String sql = "select * from HOTNUMDETAILS where( NOTENO = '"+noteno+"' and NO = '"+userno+"')";
+			ResultSet rs = stmt.executeQuery(sql);
+			if (rs.next()) 
+			{
+				return false;
+			}
+			else
+			{
+				sql = "update NOTE set HOTNUM = '"+num+"' where NoteNO = '"+noteno+"'";
+				if (stmt.executeUpdate(sql) == 1)
+				{
+					sql = "insert into HOTNUMDETAILS(NOTENO,NO) values('"+noteno+"','"+userno+"')";
+						if(stmt.executeUpdate(sql)==1)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}				
+				} 
+				else
+				{
+					return false;
+				}
+			}
+		}
+
+				catch (SQLException e) {
+					e.printStackTrace();
+					return false;
+				}
+			
+	}
+
+	public boolean updateNoteTime(String noteno, String time) {
+
 		try {
 			Statement stmt = conn.createStatement();
-			String sql = "update NOTE set HOTNUM = '"+num+"' where NO = '"+noteno+"'";
+			String sql = "update NOTE set TIME = '"+time+"' where NOTENO = '"+noteno+"'";
 			if (stmt.executeUpdate(sql) == 1) {
 					return true;
 			} else {
@@ -221,6 +266,7 @@ public class NoteDAOImpl implements NoteDAO {
 			e.printStackTrace();
 			return false;
 		}
+		
 	}
 
 
