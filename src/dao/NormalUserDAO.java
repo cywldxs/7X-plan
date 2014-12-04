@@ -61,4 +61,6 @@ public interface NormalUserDAO {
 	 * @return
 	 */
 	boolean deleteNormalUser(String no);
+	
+	
 }

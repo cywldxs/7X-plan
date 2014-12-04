@@ -55,7 +55,7 @@ IOException {
 		try {
 			if(loginer.loginJudge(userno, pwd)==true)
 			{
-				out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/DBToWeb?&userno="+userno+"\"> </head>");
+				out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/luntan.jsp?&userno="+userno+"\"> </head>");
 				out.println("<body onload=\"javascript:window.alert('登录成功！')\"></body>");
 			}
 			else

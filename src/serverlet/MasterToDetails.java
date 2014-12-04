@@ -54,6 +54,7 @@ public class MasterToDetails extends HttpServlet {
 		
 		NoteDetailsDAO noteDetailsDAO = new NoteDetailsDAOImpl();
 		out.println("<div><a href = \"http://172.17.201.21:8080/X-Plan/DBToWeb?&userno="+userno+"\">∑µªÿ¬€Ã≥</a></div>");
+		
 		out.println("<div>------------------------------------------------------------------------------------------------------</div>");
 		out.println("<div>"+note.getNoteno()+" "+note.getTitle()+" BY "+note.getWriter()+" Time: "+note.getTime()+" </div>");
 		out.println("<div>------------------------------------------------------------------------------------------------------</div>");

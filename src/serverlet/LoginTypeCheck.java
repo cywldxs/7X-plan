@@ -54,7 +54,8 @@ public class LoginTypeCheck extends HttpServlet {
 		}
 		else if(type.equals("normal")||type.equals("NORMAL"))
 		{
-			
+			out.println("<head><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/s_ziliao.html?&userno="+userno+"\"> </head>");
+			/*
 			NormalUserDAO normaluserdao = new NormalUserDAOImpl();
 			NormalUserVO normaluservo =new NormalUserVO();
 			normaluservo = normaluserdao.rtNUserInfo(userno);
@@ -92,7 +93,8 @@ public class LoginTypeCheck extends HttpServlet {
 			
 			out.println("<tr><td> <input type=\"submit\" value = \"ÐÞ¸Ä\" /></td></tr>");
 			
-			out.println("</table></form>");
+			out.println("</table></form>");*/
+			
 		}
 		else if(type.equals("manager")||type.equals("MANAGER"))
 		{

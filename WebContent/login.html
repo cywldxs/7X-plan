@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>在线教育</title>
-<script>
+  <head>
+  <title>主页面</title>
+  <script>
 	function actLogin()
 	{	
 		document.loginForm.action="LoginToMenu"; 
@@ -17,29 +16,125 @@
 		document.loginForm.submit();
 	}
 </script>
-</head>
-<body>
-<form name = "loginForm" action = "" method = "post">
-		<table>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../jiemian/resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="../jiemian/resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="../jiemian/data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="../jiemian/files/主页面/styles.css" type="text/css" rel="stylesheet"/>
+    <style type="text/css">
+    #apDiv1 {
+	position: absolute;
+	left: 10px;
+	top: 155px;
+	width: 206px;
+	height: 77px;
+	z-index: 1;
+}
+    #apDiv2 {
+	position: absolute;
+	left: 303px;
+	top: 27px;
+	width: 75px;
+	height: 25px;
+	z-index: 2;
+	font-size: medium;
+	font-weight: bold;
+	color: #FFF;
+}
+    #apDiv3 {
+	position: absolute;
+	left: 432px;
+	top: 25px;
+	width: 103px;
+	height: 24px;
+	z-index: 3;
+	font-size: medium;
+	font-weight: bold;
+	color: #006;
+}
+    body {
+	background-image: url(images/login/bg.jpg);background-attachment: fixed;background-repeat:no-repeat;
+}
+    </style>
+    <script src="../jiemian/resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="../jiemian/resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="../jiemian/resources/scripts/axure/axQuery.js"></script>
+    <script src="../jiemian/resources/scripts/axure/globals.js"></script>
+    <script src="../jiemian/resources/scripts/axutils.js"></script>
+    <script src="../jiemian/resources/scripts/axure/annotation.js"></script>
+    <script src="../jiemian/resources/scripts/axure/axQuery.std.js"></script>
+    <script src="../jiemian/resources/scripts/axure/doc.js"></script>
+    <script src="../jiemian/data/document.js"></script>
+    <script src="../jiemian/resources/scripts/messagecenter.js"></script>
+    <script src="../jiemian/resources/scripts/axure/events.js"></script>
+    <script src="../jiemian/resources/scripts/axure/action.js"></script>
+    <script src="../jiemian/resources/scripts/axure/expr.js"></script>
+    <script src="../jiemian/resources/scripts/axure/geometry.js"></script>
+    <script src="../jiemian/resources/scripts/axure/flyout.js"></script>
+    <script src="../jiemian/resources/scripts/axure/ie.js"></script>
+    <script src="../jiemian/resources/scripts/axure/model.js"></script>
+    <script src="../jiemian/resources/scripts/axure/repeater.js"></script>
+    <script src="../jiemian/resources/scripts/axure/sto.js"></script>
+    <script src="../jiemian/resources/scripts/axure/utils.temp.js"></script>
+    <script src="../jiemian/resources/scripts/axure/variables.js"></script>
+    <script src="../jiemian/resources/scripts/axure/drag.js"></script>
+    <script src="../jiemian/resources/scripts/axure/move.js"></script>
+    <script src="../jiemian/resources/scripts/axure/visibility.js"></script>
+    <script src="../jiemian/resources/scripts/axure/style.js"></script>
+    <script src="../jiemian/resources/scripts/axure/adaptive.js"></script>
+    <script src="../jiemian/resources/scripts/axure/tree.js"></script>
+    <script src="../jiemian/resources/scripts/axure/init.temp.js"></script>
+    <script src="../jiemian/files/主页面/data.js"></script>
+    <script src="../jiemian/resources/scripts/axure/legacy.js"></script>
+    <script src="../jiemian/resources/scripts/axure/viewer.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (图片) -->
+      <div id="u0" class="ax_图片">
+        <img id="u0_img" class="img " src="images/login/u0.png"/>
+        <!-- Unnamed () -->
+        <div id="u1" class="text"></div>
+      </div>
+    </div>
+  <div id="apDiv1">
+    <form name = "loginForm" action = "" method = "post">
+	  <table width="232">
 			<tr>
-			<td><label for "txtname">帐号：</label></td>
-			<td><input type = "text" id = "no" name = "no"/></td>
+			<td width="65"><label for "txtname">帐号：</label></td>
+			<td width="115"> &nbsp;
+			  <input name = "no" type = "text" id = "no" size="12"/></td>
 			</tr>
 			
 			<tr>
 			<td><label for "txtpwd">密码：</label></td>
-			<td><input type = "password" id = "pwd" name = "pwd"/></td>
+			<td> &nbsp;
+			  <input name = "pwd" type = "password" id = "pwd" size="12"/></td>
 			</tr>
 			
 			<tr>
-			<td> <input type="button" value = "登录"  onClick = "actLogin();"/></td> 
-			<td colspan=2><input type="reset" />
-			<td colspan=2> <input type="button" value = "注册" onClick =  "actRegister();" /></td>			
-			</td>
+			<td> <input style="width:50px" type="button" value = "登录"  onClick = "actLogin();"/></td> 
+			<td colspan=2> &nbsp;
+			  <input style="width:50px" type="submit" name="重置" id="重置" value="重置">
+			  &nbsp; 
+		&nbsp;
+		<input style="width:50px" type="submit" name="注册" id="注册" value="注册" onClick = "actRegister();"/>
+		
+		            			
+			<td width="15"></td>
 			</tr>
 			
 		</table>
-		</form>
-
+	</form>
+  </div>
+  <div id="apDiv2">&nbsp;&nbsp; &nbsp;&nbsp; 首页</div>
+  <div id="apDiv3">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;论坛</div>
 </body>
 </html>

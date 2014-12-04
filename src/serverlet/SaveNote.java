@@ -71,11 +71,11 @@ public class SaveNote extends HttpServlet {
 		Note note = noteDAO.saveNote(noteno, "type", title, fcontext, "0", writer, time);
 
 		if (noteDAO.addNote(note)) {
-			out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/DBToWeb?subject=check&userno="
+			out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/qunzu.jsp?subject=check&userno="
 					+writer+"\"> </head>");
 			out.println("<body onload=\"javascript:window.alert('发帖成功！')\"></body>");
 		} else {
-			out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/DBToWeb?subject=check&userno="
+			out.println("<head><!-- 以下方式定时转到其他页面 --><meta http-equiv=\"refresh\" content=\"0;url=http://172.17.201.21:8080/X-Plan/qunzu.jsp?subject=check&userno="
 					+writer+"\"> </head>");
 			out.println("<body onload=\"javascript:window.alert('发帖失败！')\"></body>");
 		}

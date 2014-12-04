@@ -1,5 +1,6 @@
 package impl;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -156,10 +157,10 @@ public class NoteDAOImpl implements NoteDAO {
 		String max = null;
 		try {
 			Statement stmt = conn.createStatement();
-			String sql = "select max(noteno) from note ";
+			String sql = "select max(cast(noteno as int)) from note ";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
-				max = (String) rs.getObject(1);
+				max = ((BigDecimal) rs.getObject(1)).toString();
 				if(!(max==null))
 				{	
 				int tempMax = Integer.valueOf(max) + 1;

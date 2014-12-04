@@ -1,0 +1,580 @@
+﻿$axure.loadCurrentPage({
+  "url":"login.html",
+  "generationDate":new Date(1417576552580.9),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "defaultBackgroundImageInfo":{
+    "path":"images/login/bg.gif",
+    "width":1354,
+    "height":496},
+  "viewIdToBackgroundImageInfo":{
+},
+  "page":{
+    "packageId":"a7087b9edfff40e7924f277da374cce5",
+    "type":"Axure:Page",
+    "name":"login",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"near",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFFFFFFF},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"Book Antiqua",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"07101507da554a7291e73c94fda35140",
+          "label":"",
+          "type":"imageBox",
+          "styleType":"imageBox",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "location":{
+              "x":20,
+              "y":30},
+            "size":{
+              "width":181,
+              "height":60}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"2544658052594eb2971d09162c43e83a",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+                "fontWeight":"400",
+                "fontStyle":"normal",
+                "location":{
+                  "x":20,
+                  "y":30},
+                "size":{
+                  "width":181,
+                  "height":60}},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onClick":{
+              "description":"OnClick",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 重新加载",
+                      "target":{
+                        "targetType":"reloadPage",
+                        "includeVariables":true},
+                      "linkType":"current"}]}]}},
+          "tabbable":true,
+          "images":{
+            "normal~":"images/login/u0.png"}},
+{
+          "id":"2279f075d880496da340e38d6c680506",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "location":{
+              "x":95,
+              "y":238},
+            "size":{
+              "width":111,
+              "height":26}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"b1d4d2e62ba1454197ab4df0435bd89d",
+          "label":"",
+          "type":"checkbox",
+          "styleType":"checkbox",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "location":{
+              "x":34.75,
+              "y":278.25},
+            "size":{
+              "width":92,
+              "height":16}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"7587fc88b54e42b183c4970dfa3e16fa",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+                "fontWeight":"400",
+                "fontStyle":"normal",
+                "location":{
+                  "x":34.75,
+                  "y":278.25},
+                "size":{
+                  "width":92,
+                  "height":16}},
+              "adaptiveStyles":{
+}}]},
+{
+          "id":"34ac1df8244e40c5ba582f67a9b9cace",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "opacity":"0",
+            "location":{
+              "x":206,
+              "y":210},
+            "size":{
+              "width":71,
+              "height":57},
+            "cornerRadiusTopLeft":"5"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"fbaf7e65be5f4e9dbe2e24d57d2f95bb",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+                "fontWeight":"400",
+                "fontStyle":"normal",
+                "opacity":"0",
+                "location":{
+                  "x":206,
+                  "y":210},
+                "size":{
+                  "width":71,
+                  "height":57},
+                "cornerRadiusTopLeft":"5"},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onClick":{
+              "description":"OnClick",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 luntan",
+                      "target":{
+                        "targetType":"page",
+                        "url":"luntan.html",
+                        "includeVariables":true},
+                      "linkType":"current"}]}]}},
+          "tabbable":true,
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"3358089cb4464c04b0343cb1f5fbe3df",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "location":{
+              "x":95,
+              "y":210},
+            "size":{
+              "width":111,
+              "height":27}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"8a59055757bf48f1bf573301426e28ab",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontSize":"18px",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "horizontalAlignment":"center",
+            "verticalAlignment":"middle",
+            "location":{
+              "x":402,
+              "y":50},
+            "size":{
+              "width":102,
+              "height":33},
+            "cornerRadiusTopLeft":"10"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"abe28865ec2547c58bd5f04ebcbf0e8b",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+                "fontSize":"18px",
+                "fontWeight":"400",
+                "fontStyle":"normal",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "location":{
+                  "x":402,
+                  "y":50},
+                "size":{
+                  "width":102,
+                  "height":33},
+                "cornerRadiusTopLeft":"10"},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onClick":{
+              "description":"OnClick",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 重新加载",
+                      "target":{
+                        "targetType":"reloadPage",
+                        "includeVariables":true},
+                      "linkType":"current"}]}]}},
+          "tabbable":true,
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"e5c0ffd4e4a443cdbf5635ee2de53897",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "location":{
+              "x":642,
+              "y":55},
+            "size":{
+              "width":58,
+              "height":25}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"5367e8c65a924ee2989e5613be28fdf2",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+                "fontWeight":"400",
+                "fontStyle":"normal",
+                "location":{
+                  "x":642,
+                  "y":55},
+                "size":{
+                  "width":58,
+                  "height":25}},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onClick":{
+              "description":"OnClick",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 luntan",
+                      "target":{
+                        "targetType":"page",
+                        "url":"luntan.html",
+                        "includeVariables":true},
+                      "linkType":"current"}]}]}},
+          "tabbable":true,
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"1dee3ea5837347b89fec21e72f458044",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "location":{
+              "x":792,
+              "y":55},
+            "size":{
+              "width":88,
+              "height":25}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"1ba95c83003840b8af8076c33aa64d3d",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+                "fontWeight":"400",
+                "fontStyle":"normal",
+                "location":{
+                  "x":792,
+                  "y":55},
+                "size":{
+                  "width":88,
+                  "height":25}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"8f2d2b519167475aaf0c5334beca0531",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "location":{
+              "x":932,
+              "y":55},
+            "size":{
+              "width":168,
+              "height":25}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"8ee9cefb17934352b2cbe8731062b493",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+                "fontWeight":"400",
+                "fontStyle":"normal",
+                "location":{
+                  "x":932,
+                  "y":55},
+                "size":{
+                  "width":168,
+                  "height":25}},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onClick":{
+              "description":"OnClick",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 链接",
+                      "target":{
+                        "targetType":"page",
+                        "includeVariables":true},
+                      "linkType":"current"}]}]}},
+          "tabbable":true,
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"cf706722c6044c86802d3e779cf08505",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontSize":"18px",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "horizontalAlignment":"center",
+            "verticalAlignment":"middle",
+            "location":{
+              "x":130,
+              "y":330},
+            "size":{
+              "width":40,
+              "height":30},
+            "cornerRadiusTopLeft":"10"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"a3dfb5fea1b04ac8818d1c4d182be539",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+                "fontSize":"18px",
+                "fontWeight":"400",
+                "fontStyle":"normal",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "location":{
+                  "x":130,
+                  "y":330},
+                "size":{
+                  "width":40,
+                  "height":30},
+                "cornerRadiusTopLeft":"10"},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onClick":{
+              "description":"OnClick",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 zhuce",
+                      "target":{
+                        "targetType":"page",
+                        "url":"zhuce.html",
+                        "includeVariables":true},
+                      "linkType":"current"}]}]}},
+          "tabbable":true,
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"982c47490ff34b408e903658400870a0",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+            "fontSize":"18px",
+            "fontWeight":"400",
+            "fontStyle":"normal",
+            "horizontalAlignment":"center",
+            "verticalAlignment":"middle",
+            "location":{
+              "x":32,
+              "y":330},
+            "size":{
+              "width":66,
+              "height":30},
+            "cornerRadiusTopLeft":"10"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"dfa1f1b8385245dd9b0f1da681d8eafa",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Book Antiqua Normal', 'Book Antiqua'",
+                "fontSize":"18px",
+                "fontWeight":"400",
+                "fontStyle":"normal",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "location":{
+                  "x":32,
+                  "y":330},
+                "size":{
+                  "width":66,
+                  "height":30},
+                "cornerRadiusTopLeft":"10"},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "07101507da554a7291e73c94fda35140":{
+      "scriptId":"u0"},
+    "2544658052594eb2971d09162c43e83a":{
+      "scriptId":"u1"},
+    "2279f075d880496da340e38d6c680506":{
+      "scriptId":"u2"},
+    "b1d4d2e62ba1454197ab4df0435bd89d":{
+      "scriptId":"u3"},
+    "7587fc88b54e42b183c4970dfa3e16fa":{
+      "scriptId":"u4"},
+    "34ac1df8244e40c5ba582f67a9b9cace":{
+      "scriptId":"u5"},
+    "fbaf7e65be5f4e9dbe2e24d57d2f95bb":{
+      "scriptId":"u6"},
+    "3358089cb4464c04b0343cb1f5fbe3df":{
+      "scriptId":"u7"},
+    "8a59055757bf48f1bf573301426e28ab":{
+      "scriptId":"u8"},
+    "abe28865ec2547c58bd5f04ebcbf0e8b":{
+      "scriptId":"u9"},
+    "e5c0ffd4e4a443cdbf5635ee2de53897":{
+      "scriptId":"u10"},
+    "5367e8c65a924ee2989e5613be28fdf2":{
+      "scriptId":"u11"},
+    "1dee3ea5837347b89fec21e72f458044":{
+      "scriptId":"u12"},
+    "1ba95c83003840b8af8076c33aa64d3d":{
+      "scriptId":"u13"},
+    "8f2d2b519167475aaf0c5334beca0531":{
+      "scriptId":"u14"},
+    "8ee9cefb17934352b2cbe8731062b493":{
+      "scriptId":"u15"},
+    "cf706722c6044c86802d3e779cf08505":{
+      "scriptId":"u16"},
+    "a3dfb5fea1b04ac8818d1c4d182be539":{
+      "scriptId":"u17"},
+    "982c47490ff34b408e903658400870a0":{
+      "scriptId":"u18"},
+    "dfa1f1b8385245dd9b0f1da681d8eafa":{
+      "scriptId":"u19"}}});

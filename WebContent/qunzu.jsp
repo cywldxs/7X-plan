@@ -1,0 +1,567 @@
+<%@ page language="java" import="dao.*" import="impl.*" import="model.*"
+	import="vo.*" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>qunzu</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link href="resources/css/jquery-ui-themes.css" type="text/css"
+	rel="stylesheet" />
+<link href="resources/css/axure_rp_page.css" type="text/css"
+	rel="stylesheet" />
+<link href="data/styles.css" type="text/css" rel="stylesheet" />
+<link href="files/qunzu/styles.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+#apDiv1 {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 1;
+}
+
+#apDiv2 {
+	position: absolute;
+	width: 38px;
+	height: 19px;
+	z-index: 1;
+	left: 837px;
+	top: -1px;
+}
+
+#apDiv3 {
+	position: absolute;
+	width: 26px;
+	height: 16px;
+	z-index: 1;
+	left: 748px;
+	top: 1px;
+}
+
+#apDiv4 {
+	position: absolute;
+	width: 37px;
+	height: 24px;
+	z-index: 1;
+	left: 955px;
+	top: -3px;
+}
+
+#apDiv5 {
+	position: absolute;
+	left: 180px;
+	top: 284px;
+	width: 1002px;
+	height: 418px;
+	z-index: 1;
+}
+
+#apDiv6 {
+	position: absolute;
+	left: 645px;
+	top: 250px;
+	width: 136px;
+	height: 17px;
+	z-index: 2;
+}
+</style>
+<script src="resources/scripts/jquery-1.7.1.min.js"></script>
+<script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+<script src="resources/scripts/axure/axQuery.js"></script>
+<script src="resources/scripts/axure/globals.js"></script>
+<script src="resources/scripts/axutils.js"></script>
+<script src="resources/scripts/axure/annotation.js"></script>
+<script src="resources/scripts/axure/axQuery.std.js"></script>
+<script src="resources/scripts/axure/doc.js"></script>
+<script src="data/document.js"></script>
+<script src="resources/scripts/messagecenter.js"></script>
+<script src="resources/scripts/axure/events.js"></script>
+<script src="resources/scripts/axure/action.js"></script>
+<script src="resources/scripts/axure/expr.js"></script>
+<script src="resources/scripts/axure/geometry.js"></script>
+<script src="resources/scripts/axure/flyout.js"></script>
+<script src="resources/scripts/axure/ie.js"></script>
+<script src="resources/scripts/axure/model.js"></script>
+<script src="resources/scripts/axure/repeater.js"></script>
+<script src="resources/scripts/axure/sto.js"></script>
+<script src="resources/scripts/axure/utils.temp.js"></script>
+<script src="resources/scripts/axure/variables.js"></script>
+<script src="resources/scripts/axure/drag.js"></script>
+<script src="resources/scripts/axure/move.js"></script>
+<script src="resources/scripts/axure/visibility.js"></script>
+<script src="resources/scripts/axure/style.js"></script>
+<script src="resources/scripts/axure/adaptive.js"></script>
+<script src="resources/scripts/axure/tree.js"></script>
+<script src="resources/scripts/axure/init.temp.js"></script>
+<script src="files/qunzu/data.js"></script>
+<script src="resources/scripts/axure/legacy.js"></script>
+<script src="resources/scripts/axure/viewer.js"></script>
+<script type="text/javascript">
+	$axure.utils.getTransparentGifPath = function() {
+		return 'resources/images/transparent.gif';
+	};
+	$axure.utils.getOtherPath = function() {
+		return 'resources/Other.html';
+	};
+	$axure.utils.getReloadPath = function() {
+		return 'resources/reload.html';
+	};
+</script>
+</head>
+<body>
+	<div id="base" class="">
+
+		<!-- Unnamed (图片) -->
+		<div id="u0" class="ax_图片">
+			<!-- Unnamed () -->
+			<div id="u1" class="text"></div>
+			<img id="u0_img" class="img " src="images/login/u0.png" />
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u2" class="ax_形状">
+			<!-- Unnamed () -->
+			<div id="u3" class="text"></div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u4" class="ax_文本">
+			<img id="u4_img" class="img " src="resources/images/transparent.gif" />
+			<!-- Unnamed () -->
+			<div id="u5" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Regular', 'Applied Font';">论坛</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (图片) -->
+		<div id="u6" class="ax_图片">
+			<img id="u6_img" class="img " src="images/qunzu/u6.png" />
+			<!-- Unnamed () -->
+			<div id="u7" class="text"></div>
+		</div>
+
+
+
+
+
+		<!-- Unnamed (形状) -->
+		<div id="u14" class="ax_文本">
+			<img id="u14_img" class="img " src="resources/images/transparent.gif" />
+			<!-- Unnamed () -->
+			<div id="u15" class="text"></div>
+		</div>
+
+
+
+		<!-- Unnamed (菜单) -->
+		<div id="u18" class="ax_菜单">
+			<img id="u18_menu" class="img " src="images/qunzu/u18_menu.png"
+				alt="u18_menu" />
+
+			<!-- Unnamed (表格) -->
+			<div id="u19" class="ax_表格">
+
+				<!-- Unnamed (菜单项) -->
+				<div id="u20" class="ax_表格单元">
+					<img id="u20_img" class="img "
+						src="resources/images/transparent.gif" />
+					<!-- Unnamed () -->
+					<div id="u21" class="text">
+						<p>
+							<span
+								style="font-family: 'Applied Font Regular', 'Applied Font';">全部主题</span>
+						</p>
+					</div>
+				</div>
+
+				<!-- Unnamed (菜单项) -->
+				<div id="u22" class="ax_表格单元">
+					<img id="u22_img" class="img "
+						src="resources/images/transparent.gif" />
+					<!-- Unnamed () -->
+					<div id="u23" class="text">
+						<p>
+							<span
+								style="font-family: 'Applied Font Regular', 'Applied Font';">最新</span>
+						</p>
+					</div>
+				</div>
+
+				<!-- Unnamed (菜单项) -->
+				<div id="u24" class="ax_表格单元">
+					<img id="u24_img" class="img "
+						src="resources/images/transparent.gif" />
+					<!-- Unnamed () -->
+					<div id="u25" class="text">
+						<p>
+							<span
+								style="font-family: 'Applied Font Regular', 'Applied Font';">热门</span>
+						</p>
+					</div>
+				</div>
+
+				<!-- Unnamed (菜单项) -->
+				<div id="u26" class="ax_表格单元">
+					<img id="u26_img" class="img "
+						src="resources/images/transparent.gif" />
+					<!-- Unnamed () -->
+					<div id="u27" class="text">
+						<p>
+							<span
+								style="font-family: 'Applied Font Regular', 'Applied Font';">热帖</span><span
+								style="font-family: 'Applied Font Regular', 'Applied Font';">&nbsp;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Unnamed (菜单) -->
+			<div id="u28" class="ax_菜单 sub_menu">
+				<img id="u28_menu" class="img " src="images/qunzu/u28_menu.png"
+					alt="u28_menu" />
+
+				<!-- Unnamed (表格) -->
+				<div id="u29" class="ax_表格">
+
+					<!-- Unnamed (菜单项) -->
+					<div id="u30" class="ax_表格单元">
+						<img id="u30_img" class="img " src="images/qunzu/u30.png" />
+						<!-- Unnamed () -->
+						<div id="u31" class="text"></div>
+					</div>
+
+					<!-- Unnamed (菜单项) -->
+					<div id="u32" class="ax_表格单元">
+						<img id="u32_img" class="img " src="images/qunzu/u30.png" />
+						<!-- Unnamed () -->
+						<div id="u33" class="text"></div>
+					</div>
+
+					<!-- Unnamed (菜单项) -->
+					<div id="u34" class="ax_表格单元">
+						<img id="u34_img" class="img " src="images/qunzu/u34.png" />
+						<!-- Unnamed () -->
+						<div id="u35" class="text"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Unnamed (流程形状) -->
+		<!-- Unnamed (图片) -->
+		<!-- Unnamed (形状) -->
+		<!-- Unnamed (形状) -->
+		<!-- Unnamed (形状) -->
+		<div id="u44" class="ax_文本">
+			<img id="u44_img" class="img " src="resources/images/transparent.gif" />
+			<!-- Unnamed () -->
+			<div id="u45" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Regular', 'Applied Font';">作者</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u46" class="ax_文本">
+			<img id="u46_img" class="img " src="resources/images/transparent.gif" />
+			<!-- Unnamed () -->
+			<div id="u47" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Regular', 'Applied Font';">最后发表</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u48" class="ax_文本">
+			<img id="u48_img" class="img " src="resources/images/transparent.gif" />
+			<!-- Unnamed () -->
+			<div id="u49" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Regular', 'Applied Font';">回复/查看</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<!-- Unnamed (形状) -->
+		<!-- Unnamed (流程形状) -->
+		<div id="u54" class="ax_流程形状">
+			<!-- Unnamed () -->
+			<div id="u55" class="text"></div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<!-- Unnamed (文本框(单行)) -->
+		<!-- Unnamed (形状) -->
+		<!-- Unnamed (形状) -->
+		<div id="u61" class="ax_文本">
+			<img id="u61_img" class="img " src="resources/images/transparent.gif" />
+			<!-- Unnamed () -->
+			<div id="u62" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Regular', 'Applied Font';">用户在线</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u63" class="ax_文本">
+			<img id="u63_img" class="img " src="resources/images/transparent.gif" />
+			<!-- Unnamed () -->
+			<div id="u64" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Regular', 'Applied Font';">个</span><span
+						style="font-family: 'Applied Font Regular', 'Applied Font';">人中心
+
+						<%
+						LoginDAO loginDAO = new LoginDAOImpl();
+						String userno = request.getParameter("userno");
+						String type = loginDAO.rtLoginType(userno);
+						out.println("<a href=\"http://172.17.201.21:8080/X-Plan/LoginTypeCheck?&userno="
+								+ userno + "\">" + userno + "</a>");
+					%>
+
+					</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u65" class="ax_文本">
+			<img id="u65_img" class="img " src="resources/images/transparent.gif" />
+			<!-- Unnamed () -->
+			<div id="u66" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Regular', 'Applied Font';">退</span><span
+						style="font-family: 'Applied Font Regular', 'Applied Font';">出</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (图片) -->
+		<div id="u67" class="ax_图片">
+			<%
+				String type2 = loginDAO.rtLoginType(userno);
+				NormalUserDAO nmudao = new NormalUserDAOImpl();
+				String img = null;
+				if (type2.equals("normal") || type2.equals("NORMAL")) {
+					NormalUserVO nm = nmudao.rtNUserInfo(userno);
+					img = nm.getImage();
+				} else if (type2.equals("manager") || type2.equals("MANAGER")) {
+					img = "images\\tiezi\\u71.gif";
+				} else if (type2.equals("teacher") || type2.equals("TEACHER")) {
+					img = "images\\tiezi\\u73.gif";
+				}
+			%>
+			<img id="u67_img" class="img " <%out.println("src=\"" + img + "\"");%> />
+			<!-- Unnamed () -->
+			<div id="u68" class="text"></div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u69" class="ax_文本">
+			<img id="u69_img" class="img " src="resources/images/transparent.gif" />
+			<!-- Unnamed () -->
+			<div id="u70" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Regular', 'Applied Font';">用</span><span
+						style="font-family: 'Applied Font Regular', 'Applied Font';">户组：</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u71" class="ax_文本">
+			<img id="u71_img" class="img " src="resources/images/transparent.gif" />
+			<!-- Unnamed () -->
+			<div id="u72" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Regular', 'Applied Font';">
+						<%
+							out.println("" + type + "");
+						%>
+					</span>
+				</p>
+				<p>
+					<span style="font-family: 'Applied Font Regular', 'Applied Font';">&nbsp;</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (HTML Button) -->
+		<!-- Unnamed (HTML Button) -->
+		<!-- Unnamed (水平线) -->
+		<!-- Unnamed (HTML Button) -->
+		<!-- Unnamed (菜单) -->
+		<div id="u77" class="ax_菜单">
+			<img id="u77_menu" class="img " src="images/zhuce/u35_menu.png"
+				alt="u77_menu" />
+
+			<!-- Unnamed (表格) -->
+			<div id="u78" class="ax_表格">
+
+				<!-- Unnamed (菜单项) -->
+				<div id="u79" class="ax_表格单元">
+					<img id="u79_img" class="img " src="images/zhuce/u37.png" />
+					<!-- Unnamed () -->
+					<div id="u80" class="text"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u81" class="ax_形状">
+			<img id="u81_img" class="img " src="images/zhuce/u39.png" />
+			<!-- Unnamed () -->
+			<div id="u82" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Bold', 'Applied Font';">					<%
+					out.println("<a href = \"http://172.17.201.21:8080/X-Plan/luntan.jsp?userno="+ userno + "\">首页</a>");
+					%></span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u83" class="ax_形状">
+			<img id="u83_img" class="img " src="images/zhuce/u41.png" />
+			<!-- Unnamed () -->
+			<div id="u84" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Bold', 'Applied Font';">在线教育</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u85" class="ax_形状">
+			<img id="u85_img" class="img " src="images/zhuce/u43.png" />
+			<!-- Unnamed () -->
+			<div id="u86" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Bold', 'Applied Font';">快</span><span
+						style="font-family: 'Applied Font Bold', 'Applied Font';">捷导航</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Unnamed (形状) -->
+		<div id="u87" class="ax_形状">
+			<img id="u87_img" class="img " src="images/zhuce/u45.png" />
+			<!-- Unnamed () -->
+			<div id="u88" class="text">
+				<p>
+					<span style="font-family: 'Applied Font Bold', 'Applied Font';">论坛</span>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="apDiv5">
+		<table width="1003" height="420" border="0" cellpadding="0"
+			cellspacing="0">
+			<style type="text/css">
+div,span,font,a,td {
+	font-size: 13px;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-left: 0px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	background: #efefef;
+}
+
+th {
+	border-right: 0;
+	border-bottom: 1px dotted #aaa;
+	padding: 3px 15px;
+	text-align: center;
+	font-weight: bold;
+	background: #efefef;
+	font-size: 13px;
+}
+
+td {
+	border-right: 0;
+	border-bottom: 1px dotted #aaa;
+	padding: 3px 15px;
+	text-align: center;
+	color: #3C3C3C;
+	background: white
+}
+</style>
+
+			<tr>
+				<th width="405" height="40" scope="row">&nbsp;</th>
+				<td width="229">&nbsp;</td>
+				<td width="178">&nbsp;</td>
+				<td width="163">&nbsp;</td>
+			</tr>
+			<%
+				NoteDAO noteDao = new NoteDAOImpl();
+				for (Note note : noteDao.listSortedNote()) {
+					NoteDAO noteDAO = new NoteDAOImpl();
+					String hotnum = noteDAO.rtMaxHotnum(note.getNoteno());
+					out.println("<tr>");
+					out.println("<th scope=\"row\"><a href=\"http://172.17.201.21:8080/X-Plan/tiezi.jsp?noteno="
+							+ note.getNoteno()
+							+ "&userno="
+							+ userno
+							+ "\">"
+							+ note.getTitle() + "</a></th>");
+					out.println("<td><a href=\"http://172.17.201.21:8080/X-Plan/HotNumUp?noteno="
+							+ note.getNoteno()
+							+ "&userno="
+							+ userno
+							+ "&hotnum="
+							+ hotnum + "\">" + hotnum + "</a></td>");
+					out.println("<td>" + note.getWriter() + "</td>");
+					out.println("<td>" + note.getTime() + "</td>");
+					out.println("</tr>");
+				}
+			%>
+			<tr>
+				<th scope="row">&nbsp;</th>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+
+		</table>
+		<%
+			out.println("<form name = \"notecomit\" action=\"SaveNote?subject=check&userno="
+					+ userno + "\" method=\"post\"> ");
+			out.println("<div>------------------------------------------------------------------------------------------------------</div>");
+			out.println("<div>主题：</div>");
+			out.println("<input type=\"input\" name=\"title\" value=\"请输入主题\" size=\"30\" maxlength=\"30\" ></input> ");
+			out.println("<div>------------------------------------------------------------------------------------------------------</div>");
+			out.println("<div>主要内容：</div>");
+			out.println("<textarea name=\"contexts\" rows=\"20\" cols=\"100\">主要内容</textarea>");
+			out.println("<div>------------------------------------------------------------------------------------------------------</div>");
+			out.println("<div>发帖人：<a href = \"http://172.17.201.21:8080/X-Plan/LoginTypeCheck?userno="
+					+ userno + "\">" + userno + "</a></div>");
+			out.println("<div>  ");
+			out.println(" <input type=\"submit\" value=\"发帖\" />  <!--表单数据提交按钮,点击将把其所在的form的数据提交到action位置-->       ");
+			out.println("<input type=\"reset\" value=\"清空\"/> ");
+			out.println(" </div>");
+			out.println("</form> ");
+		%>
+	</div>
+	<div id="apDiv6">点赞数</div>
+
+
+</body>
+</html>
